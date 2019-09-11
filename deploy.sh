@@ -1,3 +1,5 @@
+. ../secrets.data
+
 
 PROJECT_NAME=$(cat ./package.json | jq -r .name)
 PROJECT_NAME="$(tr [A-Z] [a-z] <<< "$PROJECT_NAME")" # to lowercase
@@ -9,6 +11,7 @@ gcloud builds submit \
   --tag $REPOSITORY/$PROJECT_NAME
 
 gcloud beta run deploy \
-  --image $REPOSITORY/$PROJECT_NAME 
+  --image $REPOSITORY/$PROJECT_NAME \
+  --set-env-vars=GOOGLE_CLOUD_PROJECT=$GOOGLE_CLOUD_PROJECT
   
 

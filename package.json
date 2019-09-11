@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "@google-cloud/logging": "^5.2.2",
+    "@google-cloud/logging-winston": "^2.0.1",
+    "dorongrinstein-firebase-jwt": "^1.0.9",
+    "dorongrinstein-gcp-logging": "^1.0.4",
+    "express": "^4.17.1",
+    "winston": "^3.2.1"
   }
 }
